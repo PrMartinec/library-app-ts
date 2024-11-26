@@ -1,17 +1,18 @@
 import express from 'express';
-import log4js from 'log4js';
+import bookRoutes from './routes/bookRoutes.js';
+import connectDB from "./utils/mongooseUtil.js";
+import logger from './utils/loggerUtil.js';
 
 const app = express();
-const port = 3000;
-const logger = log4js.getLogger();
 
-logger.level = "debug";
+app.use(express.json());
 
+app.use('/books', bookRoutes);
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
+connectDB();
 
-app.listen(port, () => {
-    return logger.info(`Express is listening at http://localhost:${port}`);
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    return logger.info(`Express is listening at http://localhost:${PORT}`);
 });

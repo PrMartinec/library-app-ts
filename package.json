@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "express": "^4.21.1",
-    "log4js": "^6.9.1"
+    "log4js": "^6.9.1",
+    "mongoose": "^8.8.3"
   }
 }
