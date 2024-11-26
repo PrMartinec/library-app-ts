@@ -1,11 +1,19 @@
 {
-    "compilerOptions": {
-      "module": "commonjs",
-      "esModuleInterop": true,
-      "target": "es6",
-      "moduleResolution": "node",
-      "sourceMap": true,
-      "outDir": "dist"
-    },
-    "lib": ["es2015"]
-  }
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "types": [
+      "mocha",
+      "node"
+    ]
+  },
+  "lib": ["es2015"],
+  "include": [
+    "src/**/*.ts",
+    "tests/**/*.ts"
+  ]
+}
